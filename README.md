@@ -1,5 +1,5 @@
 # BirdCensusApp
-Javascript app to show the finnish bird census on a web page.
+Webapp app to show the finnish bird census on a web page.
 
 Built with HTML, JQuery, Javascript, PHP and Ajax, tested on a local wamp server.
 
