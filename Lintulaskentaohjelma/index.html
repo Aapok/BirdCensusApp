@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="content-type" content="text/html" charset="UTF-8"></meta>
+	<title>Lintujen laskenta</title>
+
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/1.0.7/css/responsive.dataTables.min.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/1.0.7/js/dataTables.responsive.min.js"> </script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/skripti.js"></script>
+</head>
+<body >
+
+<div data-role="page" id="main">
+<div id="banner">
+<img src="kuvat/metsa.png" id="bannerkuva">
+</div>
+<div id="form">
+	<label> Laskentavuosi:</label><br>
+	<input type="number" id="vuosi" value="2015" required></input><br>
+	<label> Laskentakausi:</label><br>
+		<select id="census">
+		<option value="2">Talvilaskenta</option>
+		<option value="3">Kevätlaskenta</option>
+		<option value="1">Syyslaskenta</option>
+		</select><br>
+	<button type="button" id="jsonbutton">Hae laskentakausi</button>
+</div>
+  <div>
+    <table id="taulu1" class="display responsive nowrap">
+      <thead>
+        <tr>
+		<th> Havaintodokumentin numero</th>
+		<th>Laskentapäivä</th>
+		<th>laskijoiden nimet</th>
+		<th>Reitin numero</th>
+		<th>10x10 km2 yhtenäiskoordinaatit</th>
+		<th>Alueellisen lintutieteellisen yhdistyksen numero</th>
+		<th>Alueellisen lintutieteellisen yhdistyksen nimi</th>
+		<th>Laskennan lajimäärä </th>
+		<th>Laskennan yksilömäärä </th>
+		<th>Laskenta-alueen kunta </th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div data-role="modal" class="ui-content">
+<div id="laskenta" class="modal" class="ui-responsive">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" onclick="Sulje();">×</span>
+      <h2 id="modaalihead">Laskenta</h2>
+    </div>
+    <div class="modal-body">
+			<table data-role="table" id="taulu2" class="ui-responsive table-stroke">
+			  <thead>
+			  <tr>
+				<th data-priority="persist">Laji suomeksi</th>
+				<th data-priority="1">Laji</th>
+				<th data-priority="2">YksilömääräBiotooppiF</th>
+				<th data-priority="3">Yksilömäärä</th>
+				<th data-priority="4">YksilömääräSukupuolet</th>
+			  </tr>
+			  </thead>
+			  <tbody>
+			  </tbody>
+			</table>
+			</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
